@@ -2,7 +2,7 @@ import numpy as np
 
 # Third party algorithms. Implementation maintained by SPIGA authors.
 import sort_tracker
-import retinaface
+import pytorch_retinaface
 
 # My libs
 import spiga.demo.analyze.track.retinasort.config as cfg
@@ -15,7 +15,7 @@ class RetinaSortTracker(tracker.Tracker):
     def __init__(self, config=cfg.cfg_retinasort):
         super().__init__()
 
-        self.detector = retinaface.RetinaFaceDetector(model=config['retina']['model_name'],
+        self.detector = pytorch_retinaface.RetinaFaceDetector(model=config['retina']['model_name'],
                                                       extra_features=config['retina']['extra_features'],
                                                       cfg_postreat=config['retina']['postreat'])
 
